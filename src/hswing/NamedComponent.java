@@ -21,13 +21,24 @@ public class NamedComponent {
     }
 
     /**
-     *
+     * Makes a new named component with the given name and component.
+     * A null value for the name parameter will cause the component
+     * to be ignored by the {@link Navigator}.
      * @param name  the name for a new {@link NamedComponent}
      * @param component  the component for a new {@link NamedComponent}
      * @return  a new named component with the name and component
      */
     public static NamedComponent named(String name, JComponent component) {
         return new NamedComponent(name, component);
+    }
+
+    /**
+     * Gets a new named component without a name.
+     * This will be ignored by the {@link Navigator}.
+     * @param component  the component for a new not-named NamedComponent
+     */
+    public static NamedComponent notNamed(JComponent component) {
+        return new NamedComponent(null, component);
     }
 
     /**

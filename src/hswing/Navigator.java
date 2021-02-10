@@ -18,6 +18,9 @@ public class Navigator {
     }
 
     public void add(String name, JComponent component) {
+        if (name == null) {
+            return;
+        }
         if (components.get(name) == null) {
             ArrayList<JComponent> list = new ArrayList<>();
             list.add(component);
