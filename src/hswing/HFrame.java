@@ -13,7 +13,7 @@ public class HFrame extends JFrame {
     /**
      * Takes {@link NamedComponent}s and generates an {@link HFrame} with those components as children
      * and their names accessible via the {@link Navigator}
-     * @param components
+     * @param components  the {@link NamedComponent}s to be added to the children and {@link Navigator}
      */
     public HFrame(NamedComponent... components) {
         this("", components);
@@ -24,7 +24,7 @@ public class HFrame extends JFrame {
      * and their names accessible via the {@link Navigator}. It also makes the title of the frame
      * set to the title given
      * @param title  the title of the frame
-     * @param components  the components to add as children (and add to the navigator)
+     * @param components  the {@link NamedComponent}s to be added to the children and {@link Navigator}
      */
     public HFrame(String title, NamedComponent... components) {
         super(title);
