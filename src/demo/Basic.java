@@ -19,19 +19,19 @@ public class Basic {
 
     public Basic() {
         HFrame hFrame = new HFrame("Basic",
-                named("mainPanel", new HPanel(
-                                named("buttonPanel", new HPanel( BoxLayout.PAGE_AXIS,
-                                        named("button1", new HButton("1", this::buttonListener)),
-                                        named("button2", new HButton("2", this::buttonListener)),
-                                        named("button3", new HButton("3", this::buttonListener))
-                                )),
-                                named("labelPanel", new HPanel( BoxLayout.PAGE_AXIS,
-                                        named("label", new JLabel("0")),
-                                        named("label", new JLabel("1")),
-                                        named("label", new JLabel("2"))
-                                ))
-                        )
-                ));
+            named("mainPanel", new HPanel(
+                named("buttonPanel", new HPanel( BoxLayout.PAGE_AXIS,
+                    named("button1", new HButton("1", this::buttonListener)),
+                    named("button2", new HButton("2", this::buttonListener)),
+                    named("button3", new HButton("3", this::buttonListener))
+                )),
+                named("labelPanel", new HPanel( BoxLayout.PAGE_AXIS,
+                    named("label", new JLabel("0")),
+                    named("label", new JLabel("1")),
+                    named("label", new JLabel("2"))
+                ))
+            )
+        ));
         navigator = hFrame.getNavigator();
 
         hFrame.setVisible(true);
