@@ -2,7 +2,7 @@ HierarchyComponents
 ---
 - This is a project to make initializing and traversing a GUI much simpler. The goal is to shorten multiple lines of code and make the hierarchy easier to navigate.
 ---
-Note the differences before and after Hierarchy Components:
+There are many differences before and after Hierarchy Components:
 
 Notably:
 * You can easily tell which components are children of which other components
