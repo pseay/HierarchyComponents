@@ -47,9 +47,9 @@ public class Navigator {
      * Gets a single {@link JComponent} according to the name
      * @param name  the name of the {@link JComponent} to get
      * @return  the {@link JComponent} with the name. If the {@link JComponent} does not exist, it will return null
-     * @throws MoreThanOneElementException if there are multiple {@link JComponent}s with the same name
+     * @throws MoreThanOneComponentException if there are multiple {@link JComponent}s with the same name
      */
-    public JComponent getSingle(String name) throws MoreThanOneElementException {
+    public JComponent getSingle(String name) throws MoreThanOneComponentException {
         List<JComponent> componentsWithName = components.get(name);
         if (componentsWithName == null) {
             return null;
@@ -57,7 +57,7 @@ public class Navigator {
         if (componentsWithName.size() == 1) {
             return componentsWithName.get(0);
         }
-        throw new MoreThanOneElementException(name);
+        throw new MoreThanOneComponentException(name);
     }
 
     /**
