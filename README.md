@@ -1,10 +1,8 @@
-HierarchyComponents
----
-- This is a project to make initializing and traversing a GUI much simpler. The goal is to shorten multiple lines of code and make the hierarchy easier to navigate.
----
-Note the differences before and after Hierarchy Components:
+# HierarchyComponents
 
-Notably:
+This is a project to make initializing and traversing a GUI much simpler. The goal is to shorten multiple lines of code and make the hierarchy easier to navigate.
+
+Benefits of hierarchy components:
 * You can easily tell which components are children of which other components
 * You don't have to make a component & add it to a container
   * Adding is handled automatically
@@ -17,6 +15,7 @@ class Swing{
         JPanel panel = new JPanel();
         JButton button1 = new JButton("Click me!");
         JButton button2 = new JButton("No, click me!");        
+        JButton button3 = new JButton("CLICK ME!");        
 
         button2.addActionListener((e) -> {
             System.out.println("Thanks for clicking me!");
@@ -24,6 +23,7 @@ class Swing{
 
         panel.add(button1);
         panel.add(button2);
+        panel.add(button3);
         frame.add(panel);
     }
 }
@@ -38,9 +38,13 @@ class Hierarchy {
                 named("button1", new HButton("Click me!")),
                 named("button2", new HButton("No, click me!", (e)-> {
                     System.out.println("Thanks for clicking me!");
-                }))
+                })),
+                named("button3", new HButton("CLICK ME!"))
             ))
         );
     }
 }
 ```
+
+You may be wondering how to access the variables after you made them.
+When you make a new HFrame, a Navigator is automatically created with all the components according to their name
