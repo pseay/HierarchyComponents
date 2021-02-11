@@ -49,9 +49,7 @@ public class ComplexExample {
         ));
         navigator = hFrame.getNavigator();
 
-        hFrame.setVisible(true);
-        hFrame.pack();
-        hFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        hFrame.open(WindowConstants.EXIT_ON_CLOSE, true);
     }
 
     private void buttonListener(ActionEvent e) {

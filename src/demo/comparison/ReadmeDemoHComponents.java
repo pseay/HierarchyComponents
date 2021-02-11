@@ -20,8 +20,6 @@ public class ReadmeDemoHComponents {
             ))
         );
         //showing it
-        frame.setVisible(true);
-        frame.pack();
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.open(WindowConstants.EXIT_ON_CLOSE, true);
     }
 }

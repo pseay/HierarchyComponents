@@ -25,6 +25,10 @@ class Swing{
         panel.add(button2);
         panel.add(button3);
         frame.add(panel);
+        //showing it
+        frame.pack();
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }
 ```
@@ -42,6 +46,8 @@ class Hierarchy {
                 named("button3", new HButton("CLICK ME!"))
             ))
         );
+        //showing it
+        frame.open(WindowConstants.EXIT_ON_CLOSE, true);
     }
 }
 ```

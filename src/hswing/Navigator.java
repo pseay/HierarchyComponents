@@ -61,6 +61,28 @@ public class Navigator {
     }
 
     /**
+     * Gets a single T according to the name
+     * @param name  the name of the {@link JComponent} to get
+     * @param t  the class to automatically cast it to
+     * @param <T> the class type to be returned
+     * @return  the {@link JComponent} with the name. If the {@link JComponent} does not exist, it will return null
+     * @throws MoreThanOneComponentException if there are multiple {@link JComponent}s with the same name
+     */
+    public <T> T getSingleByClass(String name, Class<T> t) throws MoreThanOneComponentException {
+        List<JComponent> componentsWithName = components.get(name);
+        if (componentsWithName == null) {
+            return null;
+        }
+        componentsWithName = componentsWithName.stream()
+                .filter(t::isInstance)
+                .collect(Collectors.toList());
+        if (componentsWithName.size() == 1) {
+            return (T)componentsWithName.get(0);
+        }
+        throw new MoreThanOneComponentException(name);
+    }
+
+    /**
      * Gets a list of {@link JComponent}s with a name
      * @param name  the search name
      * @return  a list of {@link JComponent}s with that name
