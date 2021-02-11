@@ -22,17 +22,24 @@ public class NavigatorExample {
             ))
         ).getNavigator();
 
+        //this would throw a MoreThanOneComponentException
+        //navigator.getSingle("label");
+
+        //returns null because no components have the name 'label' and the class of a JButton
+        navigator.getSingleByClass("label", JButton.class);
+
         //gets the one 'button1' with the class 'JButton' (automatically casts it from HButton -> JButton)
         navigator.getSingleByClass("button1", JButton.class).addActionListener(e -> {
-            //gets all the JLabels
-            navigator.getListByClass(JLabel.class).forEach(jLabel -> {
+            //gets all the JLabels with name 'label'
+            navigator.getListByClass("label", JLabel.class).forEach(jLabel -> {
                 jLabel.setText(jLabel.getText().repeat(2));
             });
+            navigator.getFrame().pack();
         });
 
-        //getting a list based on just the class
+        //getting a list of JComponents based on just the class
         navigator.getListByClass(JLabel.class).forEach(label -> {
-            label.setBackground(Color.blue);
+            label.setBorder(BorderFactory.createLineBorder(Color.blue, 5, true));
         });
 
         AtomicInteger aint = new AtomicInteger(10);
