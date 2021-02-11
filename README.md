@@ -17,9 +17,9 @@ class Swing{
         JButton button2 = new JButton("No, click me!");        
         JButton button3 = new JButton("CLICK ME!");        
 
-        button2.addActionListener((e) -> {
-            System.out.println("Thanks for clicking me!");
-        });        
+        button2.addActionListener((e) ->
+            System.out.println("Thanks for clicking me!")
+        );        
 
         panel.add(button1);
         panel.add(button2);
@@ -40,9 +40,9 @@ class Hierarchy {
         HFrame frame = new HFrame("Frame Title",
             notNamed(new HPanel(
                 named("button1", new HButton("Click me!")),
-                named("button2", new HButton("No, click me!", (e)-> {
-                    System.out.println("Thanks for clicking me!");
-                })),
+                named("button2", new HButton("No, click me!", (e) -> 
+                    System.out.println("Thanks for clicking me!")
+                )),
                 named("button3", new HButton("CLICK ME!"))
             ))
         );
@@ -53,4 +53,4 @@ class Hierarchy {
 ```
 
 You may be wondering how to access the variables after you made them.
-When you make a new HFrame, a Navigator is automatically created with all the components according to their name
+When you make a new HFrame, it automatically creates a Navigator with all the components according to their name.
