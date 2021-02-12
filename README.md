@@ -54,3 +54,27 @@ class Hierarchy {
 
 You may be wondering how to access the variables after you made them.
 When you make a new HFrame, it automatically creates a Navigator with all the components according to their name.
+
+Here is an example:
+```java
+class NavEx {
+    public static void main(String[] args){
+      //...code above
+      Navigator nav = frame.getNavigator();
+      
+      //SINGLES
+      //getting one component by name
+      JComponent button1 = nav.getSingle("button1");
+      //getting one component by name and class
+      HButton button1asButton = nav.getSingleByClass("button1", HButton.class);
+      
+      //LISTS
+      //getting a list by name
+      List<JComponent> labels = nav.getList("label");
+      //getting list by class
+      List<JLabel> jLabels = nav.getListByClass(JLabel.class);
+      //getting list by name and class
+      List<JLabel> jLabelsNamedLabel = nav.getListByClass("label", JLabel.class);
+    }
+}
+```
